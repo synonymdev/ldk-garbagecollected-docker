@@ -12,10 +12,12 @@ git clone https://github.com/lightningdevkit/ldk-c-bindings
 cd ldk-c-bindings
 git checkout 0.0.108
 
+CC=clang ./genbindings.sh ../rust-lightning false
+
+cd ..
 git clone https://github.com/lightningdevkit/ldk-garbagecollected/
 
-CC=clang ./genbindings.sh ../rust-lightning false
+cd ldk-garbagecollected/
+CC=clang ./genbindings.sh ../ldk-c-bindings/ "wasm" true false
 
-cd ../ldk-garbagecollected/
-CC=clang ./genbindings.sh ../rust-lightning false
 
