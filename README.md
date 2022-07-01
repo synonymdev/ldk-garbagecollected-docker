@@ -16,6 +16,8 @@ docker run wasm-ldk
 
 ## Interactive Shell
 
+Remove the Entrypoint from the Dockerfile, currently used for debugging
+
 ```
 docker run -ti wasm-ldk bash
 ```
