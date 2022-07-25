@@ -1,10 +1,7 @@
 # syntax=docker/dockerfile:1
-FROM ubuntu
+FROM debian:bookworm
 WORKDIR /
 SHELL ["/bin/bash", "-c"]
-RUN apt update && apt -y install git curl build-essential clang wasi-libc
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y -q
-RUN source $HOME/.cargo/env
-RUN /root/.cargo/bin/rustup target add wasm32-wasi
-RUN /root/.cargo/bin/cargo install --force cbindgen
+RUN apt update && apt-get -y dist-upgrade && apt-get -y install cargo libstd-rust-dev-wasm32 lld git g++ clang curl node-typescript npm python3 wasi-libc
 COPY ./build.sh ./entrypoint.sh
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
