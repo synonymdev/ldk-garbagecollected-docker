@@ -27,6 +27,7 @@ git checkout 0.0.109
 
 cd ..
 git clone https://github.com/lightningdevkit/ldk-garbagecollected/
+git v0.0.109.0
 
 cd ldk-garbagecollected/
 ./genbindings.sh ../ldk-c-bindings/ "wasm" true false

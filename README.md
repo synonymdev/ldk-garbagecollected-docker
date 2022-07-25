@@ -11,7 +11,7 @@ docker build . -t ldk-wasm
 ## Run
 
 ```
-docker run wasm-ldk
+docker run ldk-wasm
 ```
 
 ## Interactive Shell
@@ -19,7 +19,7 @@ docker run wasm-ldk
 Remove the Entrypoint from the Dockerfile, currently used for debugging
 
 ```
-docker run -ti -v /tmp:/tmp wasm-ldk bash
+docker run -ti -v /tmp:/tmp ldk-wasm bash
 ```
 
 Freshly baked bindings are now located in your local /tmp mount point.
