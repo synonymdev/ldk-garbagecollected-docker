@@ -19,5 +19,7 @@ docker run wasm-ldk
 Remove the Entrypoint from the Dockerfile, currently used for debugging
 
 ```
-docker run -ti wasm-ldk bash
+docker run -ti -v /tmp:/tmp wasm-ldk bash
 ```
+
+Freshly baked bindings are now located in your local /tmp mount point.
