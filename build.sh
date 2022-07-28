@@ -16,20 +16,18 @@ cd ..
 
 git clone https://git.bitcoin.ninja/rust-lightning
 cd rust-lightning
-git checkout origin/2022-07-109-java-bindings
+git checkout 2022-07-110-java-bindings
 cd ..
 
 git clone https://github.com/lightningdevkit/ldk-c-bindings
 cd ldk-c-bindings
-git checkout 0.0.109
+git checkout v0.0.110.0
 
 ./genbindings.sh ../rust-lightning false
 
 cd ..
 git clone https://github.com/lightningdevkit/ldk-garbagecollected/
-git v0.0.109.0
+git v0.0.110.0
 
 cd ldk-garbagecollected/
 ./genbindings.sh ../ldk-c-bindings/ "wasm" true false
-
-
